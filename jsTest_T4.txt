@@ -16,6 +16,7 @@
   <option selected="selected" value = "0">Please Select</option>
   <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=000055">Agricultural and Biological Engineering (000055)</a></li>'>Agricultural and Biological Engineering (000055)</option>
   <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=016319">Agricultural Education and Communication       General Fund (016319)</a></li>'>Agricultural Education and Communication       General Fund (016319)</option>
+  <option value = '<li><a href="https://www.uff.ufl.edu/onlinegiving/FundDetail.asp?FundCode=001071">Entomology and Nematology (001071)</a></li>'>Entomology and Nematology (001071)</option>
 </select>
 </form>
 <ul id="research_list"></ul>
@@ -39,12 +40,14 @@ $( "#funds" ).keyup(function() {
     }
   	document.getElementById("funds_list").innerHTML = htmlValue;
 });
+
 document.getElementById("research_select").onchange = function(){
   	var listElement = document.getElementById("research_list");
   	listElement.innerHTML = "";
   	var htmlValue = this.getElementsByTagName("option")[this.selectedIndex].getAttribute("value");
   	
-  	if(htmlValue === ""){
+  	if(htmlValue === "0"){
+      	listElement.innerHTML = "";
       	return;
   	}
   	var newListElement = document.createElement("li");
@@ -53,7 +56,5 @@ document.getElementById("research_select").onchange = function(){
 };
 </script>
 
-
-  </div>
-    
+  </div>  
     <!--End Left Column-->
