@@ -6,7 +6,7 @@
 <t4 type="content" name="Main Page Body Before Calendar" output="normal" modifiers="medialibrary, nav_sections"  />
 
 <h4>Search Funds</h4>
-<form id="search_funds">
+<form id="search_funds" action="#">
 <input type="text" id="funds">
 </form>
 <ul id="funds_list"></ul>
@@ -22,16 +22,19 @@
 
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
-document.getElementById("funds").onkeypress = function(){
-	var fundsArray = document.getElementsByTagName("option");
+$( "#funds" ).keyup(function() {
+  	var fundsArray = document.getElementsByTagName("option");
   	var htmlValue = "";
   	for (i = 0; i < fundsArray.length; i++) { 
+      	if(fundsArray[i].getAttribute("value") === "0"){
+          	continue;
+       	}
       	if(fundsArray[i].textContent.toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
-          	htmlValue += fundsArray[i].textContent;
+          	htmlValue += fundsArray[i].getAttribute("value");
       	}
     }
-  	document.getElementById("funds_list").innerHTML = htmlValue;//document.getElementsByTagName("option")[0].getAttribute("value");
-}
+  	document.getElementById("funds_list").innerHTML = htmlValue;
+});
 document.getElementById("research_select").onchange = function(){
   	var listElement = document.getElementById("research_list");
   	listElement.innerHTML = "";
