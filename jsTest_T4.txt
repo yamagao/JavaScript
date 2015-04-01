@@ -1,0 +1,45 @@
+<!--Left Column-->
+<div id="content-left" class="medium-12 columns">
+<t4 type="meta" meta="html_anchor" />
+  
+<h1><t4 type="content" name="Main Page Heading" output="normal" modifiers="striptags"  /></h1>
+<t4 type="content" name="Main Page Body Before Calendar" output="normal" modifiers="medialibrary, nav_sections"  />
+
+<h4>Search Funds</h4>
+<form id="search_funds">
+<input type="text" id="funds">
+</form>
+<ul id="funds_list"></ul>
+<h4>Departments/Schools/Programs/Units</h4>
+<form id="research_form">
+<select id="research_select">
+  <option selected="selected" value = "0">Please Select</option>
+  <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=000055">Agricultural and Biological Engineering (000055)</a></li>'>Agricultural and Biological Engineering (000055)</option>
+  <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=016319">Agricultural Education and Communication       General Fund (016319)</a></li>'>Agricultural Education and Communication       General Fund (016319)</option>
+</select>
+</form>
+<ul id="research_list"></ul>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+document.getElementById("funds").onkeypress = function(){
+	document.getElementById("funds_list").innerHTML = $('#funds').val();//document.getElementsByTagName("option")[0].getAttribute("value");
+}
+document.getElementById("research_select").onchange = function(){
+  	var listElement = document.getElementById("research_list");
+  	listElement.innerHTML = "";
+  	var htmlValue = this.getElementsByTagName("option")[this.selectedIndex].getAttribute("value");
+  	
+  	if(htmlValue === ""){
+      	return;
+  	}
+  	var newListElement = document.createElement("li");
+  	listElement.appendChild(newListElement);
+  	newListElement.innerHTML = htmlValue;
+};
+</script>
+
+
+  </div>
+    
+    <!--End Left Column-->
