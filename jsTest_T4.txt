@@ -23,7 +23,14 @@
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
 document.getElementById("funds").onkeypress = function(){
-	document.getElementById("funds_list").innerHTML = $('#funds').val();//document.getElementsByTagName("option")[0].getAttribute("value");
+	var fundsArray = document.getElementsByTagName("option");
+  	var htmlValue = "";
+  	for (i = 0; i < fundsArray.length; i++) { 
+      	if(fundsArray[i].textContent.toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
+          	htmlValue += fundsArray[i].textContent;
+      	}
+    }
+  	document.getElementById("funds_list").innerHTML = htmlValue;//document.getElementsByTagName("option")[0].getAttribute("value");
 }
 document.getElementById("research_select").onchange = function(){
   	var listElement = document.getElementById("research_list");
