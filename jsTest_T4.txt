@@ -23,6 +23,10 @@
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
 $( "#funds" ).keyup(function() {
+  	if($('#funds').val() === ""){
+      	document.getElementById("funds_list").innerHTML = "";
+      	return;
+  	}
   	var fundsArray = document.getElementsByTagName("option");
   	var htmlValue = "";
   	for (i = 0; i < fundsArray.length; i++) { 
