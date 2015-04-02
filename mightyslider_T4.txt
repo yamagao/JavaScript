@@ -1,0 +1,21 @@
+<li class="slide" id="photo-link-L">
+ 
+  <script>
+    var photo_url = "<t4 type="content" name="Photo Link" output="normal" modifiers="striptags"  />";
+    if(photo_url !== ""){
+    	document.getElementById("photo-link-L").setAttribute("data-mightyslider", "cover:'<t4 type="media" id="XXXXXX" formatter="path/*"/>',link: {url: '<t4 type="content" name="Photo Link" output="normal" modifiers="striptags"  />'}");
+    }
+    else{
+    	document.getElementById("photo-link-L").setAttribute("data-mightyslider", "cover:'<t4 type="media" id="XXXXXX" formatter="path/*"/>'");
+	}
+  </script>          
+                <div class="details hide-for-small-only">
+                    <a href="#" class="title"><t4 type="content" name="Slide Title" output="normal" modifiers="striptags"  /></a>
+                    <div class="description"><t4 type="content" name="Slide Description" output="normal" modifiers="striptags"  /></div>
+                    <div class="counts">
+                        <a href="<t4 type="content" name="View Feature - External Link" output="normal" modifiers="striptags"  /><t4 type="content" name="View Feature Section Link" output="link-url" modifiers="striptags"  />">View Feature</a> 
+                        <a href="<t4 type="content" name="Visit Website - External Link" output="normal" modifiers="striptags"  /><t4 type="content" name="Visit Website - Section Link" output="link-url" modifiers="striptags"  />">Visit Website</a>
+                      
+                    </div>
+                </div>
+            </li>
