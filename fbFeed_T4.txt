@@ -1,0 +1,89 @@
+<div id="fb-feed"><h1><i class="fa fa-facebook"></i>
+<strong>UF_IFAS</strong></h1></div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+var FBfeedUrl = "https://graph.facebook.com/" + <t4 type="content" name="FB ID" output="normal" modifiers="striptags, htmlentities"  /> + "/feed?limit=" + <t4 type="content" name="Max Results" output="normal" modifiers="striptags, htmlentities"  /> + "&access_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+
+function timeSince(date) {
+    var now = new Date();
+    var cap = 12;
+    if (now.getUTCFullYear() - date.substring(0, 4) > 1) {
+        return now.getUTCFullYear() - date.substring(0, 4) - 1  + " years";
+    }
+    if (now.getUTCFullYear() - date.substring(0, 4) == 0) {
+        cap = 0;
+    }
+    if (cap + now.getUTCMonth() - date.substring(5, 7) > 11) {
+        return "1 year";
+    }
+    if (cap + now.getUTCMonth() - date.substring(5, 7) > 1) {
+        return cap + now.getUTCMonth() - date.substring(5, 7) + " months";
+    }
+    if (cap + now.getUTCMonth() - date.substring(5, 7) == 1) {
+        cap = 30;
+    }
+    if (cap + now.getUTCDate() - date.substring(8, 10) > 30) {
+        return "1 month";
+    }
+    if (cap + now.getUTCDate() - date.substring(8, 10) > 1) {
+        return cap + now.getUTCDate() - date.substring(8, 10) + " days";
+    }
+    if (cap + now.getUTCDate() - date.substring(8, 10) == 1) {
+        cap = 24;
+    }
+    else{
+        cap = 0;                                                            
+    }
+    if (cap + now.getUTCHours() - date.substring(11, 13) > 23) {
+        return "1 day";
+    }
+    if (cap + now.getUTCHours() - date.substring(11, 13) > 1) {
+        return cap + now.getUTCHours() - date.substring(11, 13) + " hours";
+    }
+    if (cap + now.getUTCHours() - date.substring(11, 13) == 1) {
+        cap = 60;
+    }
+    else{
+        cap = 0;
+    }
+    if (cap + now.getUTCMinutes() - date.substring(14, 16) > 59) {
+        return "1 hour";
+    }
+    if (cap + now.getUTCMinutes() - date.substring(14, 16) > 1) {
+        return cap + now.getUTCMinutes() - date.substring(14, 16) + " minutes";
+    }
+    if (cap + now.getUTCMinutes() - date.substring(14, 16) == 1) {
+        cap = 60;
+    }
+    else{
+        cap = 0;
+    }
+    if(cap + now.getUTCSeconds() - date.substring(17, 19) > 59){
+        return "1 minute";
+    }
+    return cap + now.getUTCSeconds() - date.substring(17, 19) + " seconds";
+}                                                                                                                                 
+                                                                                                                                     
+function buildFBfeed(url){
+    var calContent  = "";
+    $.getJSON(url, function (data){
+        var entries = data.data
+        $.each(entries, function(i, loc){
+                        if(loc.message){
+            var title       = loc.message;            
+            var link        = loc.link;
+  			var id_url  	= loc.id;
+  			var url_array   = id_url.split("_");
+                        calContent += "<div class='news-item'>";
+  //calContent += "<h3><a class='viewpost' href='" + link + "' target='_blank'>" + title + "</a></h3></div>";}
+  calContent += "<h3><a class='viewpost' href='" + link + "'>" + title + "</a></h3><p class='date'>Posted " + timeSince(loc.created_time) + " ago</p></div>";}
+		})
+        $(calContent).appendTo("#fb-feed");
+    })
+};  			
+  
+
+$(document).ready(function(){
+	buildFBfeed(FBfeedUrl);
+});
+</script>
