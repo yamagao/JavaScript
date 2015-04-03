@@ -76,7 +76,8 @@ function buildFBfeed(url){
   			var url_array   = id_url.split("_");
                         calContent += "<div class='news-item'>";
   //calContent += "<h3><a class='viewpost' href='" + link + "' target='_blank'>" + title + "</a></h3></div>";}
-  calContent += "<h3><a class='viewpost' href='" + link + "'>" + title + "</a></h3><p class='date'>Posted " + timeSince(loc.created_time) + " ago</p></div>";}
+  calContent += "<h3><a class='viewpost' href='https://www.facebook.com/UFIFASNews'>" + title + "</a></h3><p class='date'>Posted " + timeSince(loc.created_time) + " ago</p></div>";}
+  //calContent += "<h3><a class='viewpost' href='" + link + "'>" + title + "</a></h3><p class='date'>Posted " + timeSince(loc.created_time) + " ago</p></div>";}
 		})
         $(calContent).appendTo("#fb-feed");
     })
