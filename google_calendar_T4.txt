@@ -1,0 +1,68 @@
+<div id="google-calendar"></div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+var maxResults  = "<t4 type="content" name="Max Results" output="normal" modifiers="striptags, htmlentities, js-var"  />";
+var calGroup    = "<t4 type="content" name="Calendar Group" output="normal" modifiers="striptags, htmlentities, js-var, rssentities"  />";
+var calendarUrl = "//www.google.com/calendar/feeds/" + calGroup + "/public/basic?orderby=starttime&sortorder=ascending&max-results=" + maxResults + "&futureevents=true&alt=json";
+
+function buildCalendar(url){
+    var calContent  = "";
+    //var months      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    $.getJSON(url, function (data){
+        var entries = data.feed.entry
+        $.each(entries, function(i, loc){
+            var title       = loc.title.$t;            
+            var description = loc.content.$t;
+            var date = loc.content.$t;
+            date = date.substring(10, 22);
+            var patt3 = new RegExp("<");
+            var res3 = patt3.exec(date);
+            if(res3 != null){
+            date = date.substring(0, res3.index);}
+            
+            var patt = new RegExp("Description:");
+            var res = patt.exec(description);
+            if(res != null){
+                description = description.substring(res.index + 13);
+                var patt2 = new RegExp("\n");
+                var res2 = patt2.exec(description);
+                description = description.substring(0, res2.index) + "...";  
+            }else{
+                description = "";
+            }
+          
+            //if(description.length >= 72){
+            //    description = description.substring(0, 72) + "...";
+            //}
+            var link        = loc.link[0].href;
+            //var start       = loc.gd$when[0].startTime;
+            //var startStamp  = new Date(start);
+            //var startMonth  = months[startStamp.getMonth()];
+            //var startDay    = startStamp.getDate();
+            //var end         = loc.gd$when[0].endTime;
+            //var endStamp    = new Date(end);
+            //var endMonth    = months[endStamp.getMonth()];
+            //var endDay      = endStamp.getDate();
+            //var timeContent = "";
+            // Time logic
+            //if(startDay == endDay && startMonth == endMonth){
+            //    timeContent = startMonth + ". " + startDay;
+            //}else if(startDay != endDay && startMonth == endMonth){
+            //    timeContent = startMonth + ". " + startDay + "-" + endDay;
+            //}else if(startDay != endDay && startMonth != endMonth){
+            //    timeContent = startMonth + ". " + startDay + " - " + endMonth + " " + endDay;
+            //}
+            calContent += "<div class='feedsb'>";
+            calContent += "<h4><strong><a href='" + link + "' target='_blank'>" + date + "</a>";
+            calContent += "<h5>" + title + "</strong></h5>";
+            calContent += "<p>" + description + "<br /><br />";
+            calContent += "<span><a href='" + link + "' target='_blank'>| More</a></span></p></div>";
+        })
+        $(calContent).appendTo("#google-calendar");
+    })
+};
+
+$(document).ready(function(){
+	buildCalendar(calendarUrl);
+});
+</script>
