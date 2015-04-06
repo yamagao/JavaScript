@@ -1,0 +1,151 @@
+<!--Left Column-->
+<div id="content-left" class="medium-12 columns">
+  <t4 type="meta" meta="html_anchor" />
+  
+  	<h1><t4 type="content" name="Main Page Heading" output="normal" modifiers="striptags"  /></h1>
+  	<t4 type="content" name="Main Page Body Before Calendar" output="normal" modifiers="medialibrary, nav_sections"  />
+<form onSubmit="return handleClick();" name="fgcsearch">
+<p><strong>Keyword Search:</strong>&nbsp;<input type="text" name="q" value="" size="20" id="keyword"/><br/><strong>Location:</strong>&nbsp;&nbsp;<select id="cid" name="cid" size="1">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Location_1">Location_1</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Location_2">Location_2</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Location_3">Location_3</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Location_4">Location_4</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Location_5">Location_5</option>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</select><br/><strong>Timeframe:</strong>&nbsp;&nbsp;<select id="datefilter" name="datefilter" size="1">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Future Events Only">Future Events Only</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Future &amp; Past Events">Future &amp; Past Events</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Past Events Only">Past Events Only</option>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</select>&nbsp;&nbsp;&nbsp;<input type="submit"  name="submit" value="Search Events" class="button secondary"/>&nbsp;&nbsp; &nbsp;<a id="returnLink" style="visibility:hidden" href="#" onclick="returnLink();return false;">Return to Featured Calendar Events</a></p>
+</form>
+<div id="srcontent"></div>
+
+
+<div id="google-calendar"></div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+function returnLink(){
+    document.getElementById("google-calendar").innerHTML = "";
+    document.getElementById("calframe").style.display = '';
+    document.getElementById("returnLink").style.visibility = 'hidden';
+}
+
+var calGroup;
+var query;
+function handleClick() {
+    document.getElementById("calframe").style.display = 'none';
+    document.getElementById("returnLink").style.visibility = 'visible';
+    switch (document.getElementById('cid').value) {
+        case "Location_1":
+            calGroup    = "Account_Name_1";
+            break;
+        case "Location_2":
+            calGroup    = "Account_Name_2";
+            break;
+        case "Location_3":
+            calGroup    = "Account_Name_3";
+            break;
+        case "Location_4":
+            calGroup    = "Account_Name_4";
+            break;
+        case "Location_5":
+            calGroup    = "Account_Name_5;
+            break;
+        default:
+            calGroup    = "";
+            break;
+    }
+    switch (document.getElementById('datefilter').value) {
+        case "Future Events Only":
+            query    = "orderby=starttime&sortorder=ascending&futureevents=true";
+            break;
+        case "Future &amp; Past Events":
+            query    = "orderby=starttime&sortorder=ascending";
+            break;
+        case "Past Events Only":
+            var today = new Date();            
+            var dd = today.getDate();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+
+            if(dd<10) {
+                dd="0"+dd;
+            } 
+
+            if(mm<10) {
+                mm="0"+mm;
+            } 
+
+            today = yyyy + "-" + mm + "-" + dd;
+            query    = "orderby=starttime&sortorder=descending&start-max=" + today;
+            break;
+        default:
+            query    = "";
+            break;
+    }
+    var calendarUrl = "//www.google.com/calendar/feeds/" + calGroup + "/public/basic?" + query + "&alt=json&q=" + document.getElementById('keyword').value;
+    document.getElementById("google-calendar").innerHTML = "";
+    $(document).ready(function(){
+	buildCalendar(calendarUrl);
+    });
+        return false; // prevent further bubbling of event
+}
+
+
+function buildCalendar(url){
+    var calContent  = "";
+    //var months      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    $.getJSON(url, function (data){
+        var entries = data.feed.entry
+if(entries == undefined)
+$("<div>No Results</div>").appendTo("#google-calendar");
+        $.each(entries, function(i, loc){
+            var title       = loc.title.$t;            
+            var description = loc.content.$t;
+            var date = loc.content.$t;
+            date = date.substring(10, 22);
+            var patt3 = new RegExp("<");
+            var res3 = patt3.exec(date);
+            if(res3 != null){
+            date = date.substring(0, res3.index);}
+            
+            var patt = new RegExp("Description:");
+            var res = patt.exec(description);
+            if(res != null){
+                description = description.substring(res.index + 13);
+            }else{
+                description = "";
+            }
+            var link        = loc.link[0].href;
+          calContent += "<div class='feedsb'>";
+            calContent += "<h4><strong><a href='" + link + "' target='_blank'>" + date + "</a>";
+            calContent += "<h5>" + title + "</strong></h5>";
+            calContent += "<p style='color:#333'>" + description + "<br /><br /> ";
+            calContent += "</p></div><hr style='border-top: 1px dotted #a7a9ac;'>";
+        })
+        $(calContent).appendTo("#google-calendar");
+    })
+};
+
+</script>
+
+
+
+<p id="calframe"><iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=Calendar_Account_1&amp;color=%230D7813&amp;src=Calendar_Account_2&amp;color=%232952A3&amp;src=Calendar_Account_3&amp;color=%23BE6D00&amp;src=Calendar_Account_4&amp;color=%23060D5E&amp;ctz=America%2FNew_York" style=" margin-bottom:-25px; border-width:0;" width="943" height="600" frameborder="0" scrolling="no"></iframe>
+</p>
+
+<p>&nbsp;</p>
+
+
+    <t4 type="content" name="Main Page Body After Calendar" output="normal" modifiers="medialibrary, nav_sections"  />
+ 	<p class="last-modified">Last Modified:&nbsp;<i><t4 type="meta" meta="last_modified" /></i></p>
+  </div>
+    
+    <!--End Left Column-->
