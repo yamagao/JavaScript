@@ -23,7 +23,7 @@
 <option value="Future &amp; Past Events">Future &amp; Past Events</option>
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 <option value="Past Events Only">Past Events Only</option>
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</select>&nbsp;&nbsp;&nbsp;<input type="submit"  name="submit" value="Search Events" class="button secondary"/>&nbsp;&nbsp; &nbsp;<a id="returnLink" style="visibility:hidden" href="#" onclick="returnLink();return false;">« Return to Featured Calendar Events</a></p>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</select>&nbsp;&nbsp;&nbsp;<input type="submit"  name="submit" value="Search Events" class="button secondary"/>&nbsp;&nbsp; &nbsp;<a id="returnLink" style="visibility:hidden" href="#" onclick="returnLink();return false;">Return to Featured Calendar Events</a></p>
 </form>
 <div id="srcontent"></div>
 
