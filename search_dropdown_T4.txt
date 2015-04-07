@@ -14,7 +14,7 @@
 <form id="research_form">
 <select id="research_select">
   <option selected="selected" value = "0">Please Select</option>
-  <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=000055">Agricultural and Biological Engineering (000055)</a></li>'>Agricultural and Biological Engineering (000055)</option>
+  <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=000055">Agricultural and Biological Engineering (000055)</a></li><li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=000055">Agricultural Test and Biological Engineering (000055)</a></li>'>Agricultural and Biological Engineering (000055)</option>
   <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=016319">Agricultural Education and Communication General Fund (016319)</a></li><li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=016319">Agricultural Test Education and Communication General Fund (016319)</a></li>'>Agricultural Education and Communication General Fund (016319)</option>
   <option value = '<li><a href="https://www.uff.ufl.edu/onlinegiving/FundDetail.asp?FundCode=001071">Entomology and Nematology (001071)</a></li>'>Entomology and Nematology (001071)</option>
 </select>
@@ -30,13 +30,24 @@ $( "#funds" ).keyup(function() {
   	}
   	var fundsArray = document.getElementsByTagName("option");
   	var htmlValue = "";
+	var tempArray;
   	for (i = 0; i < fundsArray.length; i++) { 
       	if(fundsArray[i].getAttribute("value") === "0"){
           	continue;
        	}
-	if(fundsArray[i].value.toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
       	//if(fundsArray[i].textContent.toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
-          	htmlValue += fundsArray[i].getAttribute("value");
+      	if(fundsArray[i].value.toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
+            if(fundsArray[i].value.indexOf('</li><li>') !== -1){
+                tempArray = fundsArray[i].value.split('</li>');
+                for(j = 0; j < tempArray.length; j++) { 
+                    if(tempArray[j].toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
+                        htmlValue += tempArray[j];
+                    }
+                }
+            }
+            else{
+                htmlValue += fundsArray[i].getAttribute("value");
+            }
       	}
     }
   	document.getElementById("funds_list").innerHTML = htmlValue;
