@@ -15,7 +15,7 @@
 <select id="research_select">
   <option selected="selected" value = "0">Please Select</option>
   <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=000055">Agricultural and Biological Engineering (000055)</a></li>'>Agricultural and Biological Engineering (000055)</option>
-  <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=016319">Agricultural Education and Communication       General Fund (016319)</a></li>'>Agricultural Education and Communication       General Fund (016319)</option>
+  <option value = '<li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=016319">Agricultural Education and Communication General Fund (016319)</a></li><li><a href="https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=016319">Agricultural Test Education and Communication General Fund (016319)</a></li>'>Agricultural Education and Communication General Fund (016319)</option>
   <option value = '<li><a href="https://www.uff.ufl.edu/onlinegiving/FundDetail.asp?FundCode=001071">Entomology and Nematology (001071)</a></li>'>Entomology and Nematology (001071)</option>
 </select>
 </form>
@@ -56,5 +56,7 @@ document.getElementById("research_select").onchange = function(){
 };
 </script>
 
-  </div>  
+
+  </div>
+    
     <!--End Left Column-->
