@@ -34,7 +34,8 @@ $( "#funds" ).keyup(function() {
       	if(fundsArray[i].getAttribute("value") === "0"){
           	continue;
        	}
-      	if(fundsArray[i].textContent.toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
+	if(fundsArray[i].value.toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
+      	//if(fundsArray[i].textContent.toLowerCase().indexOf($('#funds').val().toLowerCase()) !== -1){
           	htmlValue += fundsArray[i].getAttribute("value");
       	}
     }
