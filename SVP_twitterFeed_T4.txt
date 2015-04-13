@@ -1,0 +1,20 @@
+   <!--=================================Programs Areas===========================-->
+<!--Programs-->
+<div class="row">
+  <div class="programs large-12 medium 12 columns">
+    <h3><t4 type="content" name="Section Name" output="normal" modifiers="striptags"  /></h3>
+  <!--Start Program Row-->
+    <div class="row">
+      <div class="hide-prog-row" id="svp_tw_feed">
+        <!-- navigation object : Drk Blue - Twitter feeds --><t4 type="navigation" id="2381"/>
+	  </div>
+    </div><!--End program row-->
+  </div>
+</div>
+<!--END programs-->
+<script>
+var tw_feeds = document.getElementById("svp_tw_feed").getElementsByTagName("div");
+    for (i = 0; i < tw_feeds.length; i++) {
+        tw_feeds[i].setAttribute("class", "program-photo small-4 medium-4 large-4 columns");
+    }
+</script>
