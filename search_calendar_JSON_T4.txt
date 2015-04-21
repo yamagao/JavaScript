@@ -90,7 +90,7 @@ function handleClick() {
             query    = "";
             break;
     }
-    var calendarUrl = "//www.google.com/calendar/feeds/" + calGroup + "/public/basic?" + query + "&alt=json&q=" + document.getElementById('keyword').value;
+    var calendarUrl = "//www.google.com/calendar/feeds/" + calGroup + "/public/basic?" + query + "&alt=json&q=" + document.getElementById('keyword').value + "&callback=?";
     document.getElementById("google-calendar").innerHTML = "";
     $(document).ready(function(){
 	buildCalendar(calendarUrl);

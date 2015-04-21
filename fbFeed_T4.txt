@@ -2,7 +2,7 @@
 <strong>UF_IFAS</strong></h1></div>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
-var FBfeedUrl = "https://graph.facebook.com/" + <t4 type="content" name="FB ID" output="normal" modifiers="striptags, htmlentities"  /> + "/feed?limit=" + <t4 type="content" name="Max Results" output="normal" modifiers="striptags, htmlentities"  /> + "&access_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+var FBfeedUrl = "https://graph.facebook.com/" + <t4 type="content" name="FB ID" output="normal" modifiers="striptags, htmlentities"  /> + "/feed?limit=" + <t4 type="content" name="Max Results" output="normal" modifiers="striptags, htmlentities"  /> + "&access_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&callback=?";
 
 function timeSince(date) {
     var now = new Date();

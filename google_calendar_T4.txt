@@ -3,7 +3,7 @@
 <script>
 var maxResults  = "<t4 type="content" name="Max Results" output="normal" modifiers="striptags, htmlentities, js-var"  />";
 var calGroup    = "<t4 type="content" name="Calendar Group" output="normal" modifiers="striptags, htmlentities, js-var, rssentities"  />";
-var calendarUrl = "//www.google.com/calendar/feeds/" + calGroup + "/public/basic?orderby=starttime&sortorder=ascending&max-results=" + maxResults + "&futureevents=true&alt=json";
+var calendarUrl = "//www.google.com/calendar/feeds/" + calGroup + "/public/basic?orderby=starttime&sortorder=ascending&max-results=" + maxResults + "&futureevents=true&alt=json&callback=?";
 
 function buildCalendar(url){
     var calContent  = "";
