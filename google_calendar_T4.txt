@@ -4,12 +4,18 @@
 var maxResults  = "<t4 type="content" name="Max Results" output="normal" modifiers="striptags, htmlentities, js-var"  />";
 var calGroup    = "<t4 type="content" name="Calendar Group" output="normal" modifiers="striptags, htmlentities, js-var, rssentities"  />";
 var calendarUrl = "//www.google.com/calendar/feeds/" + calGroup + "/public/basic?orderby=starttime&sortorder=ascending&max-results=" + maxResults + "&futureevents=true&alt=json&callback=?";
+var enableLinks = "<t4 type="content" name="Links" output="normal" modifiers=""  />";
 
 function buildCalendar(url){
     var calContent  = "";
     //var months      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     $.getJSON(url, function (data){
-        var entries = data.feed.entry
+        var entries = data.feed.entry;
+        if(entries == null){
+        	calContent += "<p>No Events Available</p>";
+        	$(calContent).appendTo("#google-calendar");
+            return;
+        }
         $.each(entries, function(i, loc){
             var title       = loc.title.$t;            
             var description = loc.content.$t;
@@ -53,10 +59,17 @@ function buildCalendar(url){
             //    timeContent = startMonth + ". " + startDay + " - " + endMonth + " " + endDay;
             //}
             calContent += "<div class='feedsb'>";
-            calContent += "<h4><strong><a href='" + link + "' target='_blank'>" + date + "</a>";
-            calContent += "<h5>" + title + "</strong></h5>";
-            calContent += "<p>" + description + "<br /><br />";
-            calContent += "<span><a href='" + link + "' target='_blank'>| More</a></span></p></div>";
+            if(enableLinks == "false"){
+              calContent += "<h4><strong>" + date;
+              calContent += "<h5>" + title + "</strong></h5>";
+              calContent += "<p>" + description + "</p>";
+            }
+            else{
+              calContent += "<h4><strong><a href='" + link + "' target='_blank'>" + date + "</a>";
+              calContent += "<h5>" + title + "</strong></h5>";
+              calContent += "<p>" + description + "</p>";//<span><a href='" + link + "' target='_blank'>| More</a></span>
+             }
+            calContent += "</div>";
         })
         $(calContent).appendTo("#google-calendar");
     })
