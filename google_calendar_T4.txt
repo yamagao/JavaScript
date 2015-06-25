@@ -32,7 +32,9 @@ function buildCalendar(url){
                 description = description.substring(res.index + 13);
                 var patt2 = new RegExp("\n");
                 var res2 = patt2.exec(description);
-                description = description.substring(0, res2.index) + "...";  
+                if(res2 != null){
+                	description = description.substring(0, res2.index) + "...";
+                }
             }else{
                 description = "";
             }
