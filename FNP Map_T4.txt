@@ -1,5 +1,10 @@
 <style>
 .gm-style-iw + div {display: none;}
+.scrollFix {
+    line-height: 1.35;
+    overflow: hidden;
+    white-space: nowrap;
+}
 </style>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.5/src/markerwithlabel_packed.js"></script>
@@ -601,7 +606,7 @@ var infoWindows = {};
 function initialize() {
 	// Create the map
 	var mapOptions = {
-		zoom: 6,
+		zoom: 7,
 		center: Center,
 		mapTypeId: google.maps.MapTypeId.TERRAIN
 	};
@@ -664,9 +669,9 @@ function initialize() {
 		//marker.setMap(map);
 		
 		//infoWindows
-		var String = "<h3>" + dataCounty.name + "</h3>FNP Contact: " + dataCounty.contact + "<br>" + dataCounty.extension + "<br>" + dataCounty.address + "<br><a href='mailto:" + dataCounty.email + "'>" + dataCounty.email + "</a><br>" + dataCounty.phone;
+		var String = "<h5>" + dataCounty.name + "</h5>FNP Contact: " + dataCounty.contact + "<br>" + dataCounty.extension + "<br>" + dataCounty.address + "<br><a href='mailto:" + dataCounty.email + "'>" + dataCounty.email + "</a><br>" + dataCounty.phone;
 		var infoWindow = new google.maps.InfoWindow({
-			content:  String,
+			content:  '<div class="scrollFix">'+String+'</div>',
 			position: new google.maps.LatLng(dataCounty.latitude, dataCounty.longitude)
 		});
 		infoWindows[dataCounty.name] = infoWindow;
