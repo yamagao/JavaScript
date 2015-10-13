@@ -6,6 +6,7 @@
 
       var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
+	  var enableLinks = true;
       /**
        * Check if current user has authorized this application.
        */
@@ -62,8 +63,9 @@
        * appropriate message is printed.
        */
       function listUpcomingEvents() {
-		var pre = document.getElementById('google-calendar');
-		var div = document.createElement('div');				
+		var pre = document.getElementById('output');
+		var div = document.createElement('div');
+		div.className = "google-calendar";
         var request = gapi.client.calendar.events.list({
           'calendarId': 'primary',
           'timeMin': (new Date()).toISOString(),
@@ -84,9 +86,19 @@
               if (!when) {
                 when = event.start.date;
               }
-			  calContent += "<h1>" + when + "</h1>";
-			  calContent += "<p>" + event.summary + "</p>";
+			  calContent += "<div class='feedsb'>";
               //appendPre(event.summary + ' (' + when + ')')
+			  if(enableLinks == "false"){
+				calContent += "<h4><strong>" + when;
+				calContent += "<h5>" + event.summary + "</strong></h5>";
+				calContent += "<p>" + event.description + "</p>";
+              }
+			  else{
+               calContent += "<h4><strong><a href='" + event.htmlLink + "' target='_blank'>" + when + "</a>";
+               calContent += "<h5>" + event.summary + "</strong></h5>";
+               calContent += "<p>" + event.description + "</p>";
+              }
+			  calContent += "</div>";
             }
           } else {
             //appendPre('No upcoming events found.');
@@ -118,4 +130,4 @@
         Authorize
       </button>
     </div>
-<pre id="google-calendar"></pre>
+<pre id="output"></pre>
