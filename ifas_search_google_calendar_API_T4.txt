@@ -1,0 +1,148 @@
+<!--Left Column-->
+<div id="content-left" class="medium-12 columns">
+  <t4 type="meta" meta="html_anchor" />
+  
+  	<h1><t4 type="content" name="Main Page Heading" output="normal" modifiers="striptags"  /></h1>
+  	<t4 type="content" name="Main Page Body Before Calendar" output="normal" modifiers="medialibrary, nav_sections"  />
+<form onSubmit="return handleClick();" name="fgcsearch">
+<p><strong>Keyword Search:</strong>&nbsp;<input type="text" name="q" value="" size="15" id="keyword"/><br/><strong>Location:</strong><br/><select id="cid" name="cid" size="1">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="All Events">All Events</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="CALS Events">CALS Events</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Extension Events">Extension Events</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="IFAS Events">IFAS Events</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Research Events">Research Events</option>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</select><br/><strong>Timeframe:</strong><br/><select id="datefilter" name="datefilter" size="1">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Future Events Only">Future Events Only</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Future &amp; Past Events">Future &amp; Past Events</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Past Events Only">Past Events Only</option>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</select><input type="submit"  name="submit" value="Search Events" class="button secondary large"/>&nbsp;&nbsp; &nbsp;<a id="returnLink" style="visibility:hidden" href="#" onclick="returnLink();return false;">« Return to IFAS Featured Calendar Events</a></p>
+</form>
+<div id="srcontent"></div>
+
+
+<div id="google-calendar"></div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+function returnLink(){
+    document.getElementById("google-calendar").innerHTML = "";
+    document.getElementById("calframe").style.display = '';
+    document.getElementById("returnLink").style.visibility = 'hidden';
+}
+
+var calGroup;
+var query;
+function handleClick() {
+    document.getElementById("calframe").style.display = 'none';
+    document.getElementById("returnLink").style.visibility = 'visible';
+    switch (document.getElementById('cid').value) {
+        case "All Events":
+            calGroup    = "webteam@ifas.ufl.edu";
+            break;
+        case "CALS Events":
+            calGroup    = "a0t6mtbpeftbb1f9ebc05budbk@group.calendar.google.com";
+            break;
+        case "Extension Events":
+            calGroup    = "2ppce5egna890nvdqo3rer415g@group.calendar.google.com";
+            break;
+        case "IFAS Events":
+            calGroup    = "imtbpa468n6gfqjh1j3enl6g7c@group.calendar.google.com";
+            break;
+        case "Research Events":
+            calGroup    = "695nlbuoqhcgi5bdpsga24is04@group.calendar.google.com";
+            break;
+        default:
+            calGroup    = "";
+            break;
+    }
+/* 12242015-Yiqi-Gao Begin*/
+/*use a function for the exact format desired...*/
+function ISODateString(d){
+ function pad(n){return n<10 ? '0'+n : n}
+ return d.getUTCFullYear()+'-'
+      + pad(d.getUTCMonth()+1)+'-'
+      + pad(d.getUTCDate())+'T'
+      + pad(d.getUTCHours())+':'
+      + pad(d.getUTCMinutes())+':'
+      + pad(d.getUTCSeconds())+'Z'}
+
+var d = new Date(); //alert(ISODateString(d));
+
+    switch (document.getElementById('datefilter').value) {
+        case "Future Events Only":
+            query    = "&timeMin=" + ISODateString(d);
+            break;
+        case "Future &amp; Past Events":
+            query    = "";
+            break;
+        case "Past Events Only":
+            query    = "&timeMax=" + ISODateString(d);
+            break;
+        default:
+            query    = "";
+            break;
+    }
+    var calendarUrl = "https://www.googleapis.com/calendar/v3/calendars/" + calGroup + "/events?key=KKKKKKKKKKKKKEEEEEEEEEEEEEEEYYYYYYYYYYYYY&singleEvents=true&orderBy=startTime" + query + "&q=" + document.getElementById('keyword').value + "&callback=?";
+    document.getElementById("google-calendar").innerHTML = "";
+    $(document).ready(function(){
+	buildCalendar(calendarUrl);
+    });
+        return false; // prevent further bubbling of event
+}
+
+
+function buildCalendar(url){
+    var calContent  = "";
+    var months      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    $.getJSON(url, function (data){
+        var entries = data.items;//feed.entry;
+if(entries == "")
+$("<div>No Events</div>").appendTo("#google-calendar");
+        $.each(entries, function(i, loc){
+            var title       = loc.summary;//title.$t;            
+            var description = "";
+            if(loc.description){
+            	description = loc.description;//content.$t;
+              	//description = description.split(" ").slice(0, 20).toString().replace(/,/g, " ") + "...";
+          	}
+			if(loc.start.date)
+				var date = loc.start.date;//content.$t;
+			else
+				var date = loc.start.dateTime;
+				
+			date = date.substring(0, 10);			
+			date = months[date.substring(5,7) - 1] + " " + date.substring(8,10) + ", " + date.substring(0,4);
+            var link        = loc.htmlLink;
+          if(document.getElementById('datefilter').value =="Future Events Only")
+            calContent += "<div class='feedsb'><h4><strong><a href='" + link + "' target='_blank'>" + date + "</a></h4><h5>" + title + "</strong></h5><p style='color:#333'>" + description + "<br /><br /> </p></div>" ;
+          else
+          	calContent = "<div class='feedsb'><h4><strong><a href='" + link + "' target='_blank'>" + date + "</a></h4><h5>" + title + "</strong></h5><p style='color:#333'>" + description + "<br /><br /> </p></div>" + calContent;//<hr style='border-top: 1px dotted #a7a9ac;'>
+        })
+        $(calContent).appendTo("#google-calendar");
+      	//$("#google-calendar").prepend($(calContent) );
+    })
+    
+};
+/* 12242015-Yiqi-Gao End*/
+</script>
+
+
+
+<p id="calframe"><iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=a0t6mtbpeftbb1f9ebc05budbk%40group.calendar.google.com&amp;color=%230D7813&amp;src=2ppce5egna890nvdqo3rer415g%40group.calendar.google.com&amp;color=%232952A3&amp;src=imtbpa468n6gfqjh1j3enl6g7c%40group.calendar.google.com&amp;color=%23BE6D00&amp;src=695nlbuoqhcgi5bdpsga24is04%40group.calendar.google.com&amp;color=%23060D5E&amp;ctz=America%2FNew_York" style=" margin-bottom:-25px; border-width:0;" width="943" height="600" frameborder="0" scrolling="no"></iframe>
+</p>
+
+<p>&nbsp;</p>
+
+
+    <t4 type="content" name="Main Page Body After Calendar" output="normal" modifiers="medialibrary, nav_sections"  />
+ 	<p class="last-modified">Last Modified:&nbsp;<i><t4 type="meta" meta="last_modified" /></i></p>
+  </div>
+    
+    <!--End Left Column-->

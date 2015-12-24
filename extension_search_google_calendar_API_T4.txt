@@ -1,0 +1,311 @@
+<!--Left Column-->
+<div id="content-left" class="medium-7 columns">
+  <t4 type="meta" meta="html_anchor" />
+  
+  <h1><t4 type="content" name="Main Page Heading" output="normal" modifiers="striptags"  /></h1>
+  <t4 type="content" name="Main Page Body Before Calendar" output="normal" modifiers="medialibrary, nav_sections"  />
+<form onSubmit="return handleClick();" name="fgcsearch">
+<p><strong>Keyword Search:</strong><br/><input type="text" name="q" value="" size="10" id="keyword"/><strong>Location:</strong><br/><select id="cid" name="cid" size="1">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="sfyl@ifas.ufl.edu">Statewide</option>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Northwest">Northwest</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="8n6ni5qi3bjqetrjckr2kr7vf4@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Bay County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="fugsiimpqtus4lnnlfkh69ko0s@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Calhoun County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="kqm1kmkb3o1b406ckrbmelmrj0@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Escambia County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="m4h1inrcqd2ldmk35av1ook6mo@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Franklin County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="d83j5lp28fit3jhlgkt38mcmqk@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Gadsden County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="j84ao3sffriard2mui8qqrdcb0@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Gulf County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="3l59ro4kp0r0di2q4kj0to656o@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Holmes County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="8j56d6hnp1ruk7k0kdh6nge3i4@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Jackson County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="2eej6hfe5fddqvdessdgj2jah4@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Jefferson County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="f5992r4ilm5lto6po1qrcpmpss@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Leon County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="uevn0dacgivaqlitg7qm68qosg@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Liberty County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="m0h39po16in29i6ecrigf7tca8@group.calendar.google.com">&nbsp;&nbsp;&nbsp;North Florida REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="1199qga1mgsgv7ij0g0o5933a0@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Okaloosa County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="6u0fvrubd37toi5eit5uk9kj50@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Santa Rosa County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="3vam7c89mo91c40oc4kmka2608@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Wakulla County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="695734c5cfoo8g1f5sgmdgck18@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Walton County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="mbe2tro1edr6ts53funfc6q4ac@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Washington County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="c7eg8boe3o1a82er9mdj2fgnhc@group.calendar.google.com">&nbsp;&nbsp;&nbsp;West Florida REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Northeast">Northeast</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="ueo9qj0iq4gvknns2f0b3l8hd0@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Alachua County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="6m1lepgkj92ce74hs3tj3ugl6s@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Baker County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="i4p8gt5rjmaua1tf9b24c0aepk@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Bradford County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="dpm6bb28ruf1gdfu32ismjhsqg@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Clay County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="f3lhtvql4li6nogbdkvccfmfek@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Columbia County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="qfe5am5i4j7vve836g75mc92c8@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Dixie County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="fcjj97vduev1u3n81jalvmkf9s@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Duval County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="h3f2i8susip7h1o9bn43qo3gb4@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Gilchrist County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="i73rk3afnitf4fajkht9etdr0c@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Hamilton County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="ou5101io3rsl57sa3qbfn59jh0@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Lafayette County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="lscu6v5oqb4vbrboqlv55jd580@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Levy County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="r49qppjsqi3ac8a1ou02h1lfa4@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Madison County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="poac2t0cp2063ppfsor0n7icqg@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Nassau County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="rqa88216b845o3a9db4c7iru0g@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Suwannee County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="jua7hsbcem7n03lkcj5i3cdtj8@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Suwannee Valley Ag Ext Center</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="t1vuibcjek3ti0l6fvdi0hkrpg@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Taylor County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="h3nnpurp5hd955r1m3vhm95rag@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Union County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Central">Central</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="8ovi2gtrub1pbsobm6etuad1bg@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Brevard County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="qn87il1e5jhprofqduqs97u9ck@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Citrus County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="bf056kmshei1b04f8bocddj0tk@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Flagler County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="jnja09en0764btbs5gv99ojlb4@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Hernando County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="gcg06bd6qmvo30ej5fdt9cfr3c@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Lake County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="nt2u8fom12ikkjs57cp998m06s@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Marion County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="0dg8ejfo19tld5jf12uosdbseo@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Mid-Florida REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="gdk5ftpn46b4si1q988a52ck30@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Orange County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="vgb4kpg3anf2icumbsf6kuhfts@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Osceola County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="qbk0asavj3qb241ecc1om7cars@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Putnam County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="moevlooav0kh11q4ms86c3sfsc@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Seminole County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="heskv060q5ccehc4eep66nr0ss@group.calendar.google.com">&nbsp;&nbsp;&nbsp;St. Johns County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="bsn3jd0dplnlh596hb0qmkbaoo@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Sumter County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="sidktejel2ungs17vl8b8tmhms@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Volusia County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="South Central">South Central</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="pnpt28d0reb48fuqqgn4j7om1o@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Charlotte County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="6563uo0mvbcsf6qd8la0cn9bmo@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Citrus REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="1cvhumlrg4r5prsui365ck9s0c@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Collier County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="rmdvae1igqq5cg82cdqqb4f72s@group.calendar.google.com">&nbsp;&nbsp;&nbsp;DeSoto County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="ktpac5ga5dcu9hdob1e59qu6n8@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Gulf Coast REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="in7u0r14uufbdguuchelu8ku3c@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Hardee County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="jn5e522qdd36to95urol82ap6k@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Hillsborough County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="ab61r1dshros8k1s4cmp79kdso@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Lee County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="o3d5bbsrd974t2rtkjmuhqj4dc@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Manatee County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="n8u96k6bnna59mhbv1809m8g2c@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Pasco County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="c4d00ci11hdvks18dgl3sl9v7o@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Pinellas County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="42tlb2fgrh10j67nju0ccc1svc@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Polk County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="lic0nn6389kpuvlbbtb5u57im8@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Range Cattle REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="brsv74004lkcgp70p4lcqvptt8@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Sarasota County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="kueo8m8b93tmcdjfl8v3vl02m0@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Southwest Florida REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="South">South</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="h4rtb1lo6lo28indih7aq7d3bg@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Broward County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="aqu11b9gjenrhbva48763ntgjo@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Everglades REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="te925bcm6ebaeloe3nrmg4brcs@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Ft. Lauderdale REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="esmaaibp6pjkium2r1013mm2p8@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Glades County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="lk31f8gmfi84qifgad30vsn3c8@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Hendry County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="t5utm3in7n3kdd8l94k4lb75ag@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Highlands County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="7dokvdhab1jl24jkf4ecdbditg@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Indian River County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="rugkukarb6ecrfl8mnvcgmgu94@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Indian River REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="7qvl3mqukhot53vush4nucb71c@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Martin County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="6ngfnq0bmq86i55t3ufp9fjkv0@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Miami-Dade County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="s66kfs21t659b4vo6q6h290jkk@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Monroe County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="a9oa48jjk8c413ike3tdqr02ag@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Okeechobee County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="ma2lr7al4ton7527tt3ai6agto@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Palm Beach County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="kueo8m8b93tmcdjfl8v3vl02m0@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Southwest Florida REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="dqudc8du96lt2j7eoh92vs0qto@group.calendar.google.com">&nbsp;&nbsp;&nbsp;St. Lucie County</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="r10rh2tns9ape4ilvddk92v9rc@group.calendar.google.com">&nbsp;&nbsp;&nbsp;Tropical REC</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="sfyl@ifas.ufl.edu">Statewide</option>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</select><br/><strong>Timeframe:</strong><br/><select id="datefilter" name="datefilter" size="1">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Future Events Only">Future Events Only</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Future &amp; Past Events">Future &amp; Past Events</option>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<option value="Past Events Only">Past Events Only</option>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</select>&nbsp;&nbsp;&nbsp;<input type="submit"  name="submit" value="Go" />&nbsp;&nbsp; &nbsp;<a id="returnLink" style="visibility:hidden" href="#" onclick="returnLink();return false;">« Return to IFAS Featured Calendar Events</a></p>
+</form>
+<div id="srcontent"></div>
+
+
+<div id="google-calendar"></div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+function returnLink(){
+    document.getElementById("google-calendar").innerHTML = "";
+    document.getElementById("returnLink").style.visibility = 'hidden';
+}
+
+var calGroup;
+var calGroupArray;
+var query;
+function handleClick() {
+    var NorthWest = ["8n6ni5qi3bjqetrjckr2kr7vf4@group.calendar.google.com", "fugsiimpqtus4lnnlfkh69ko0s@group.calendar.google.com", "kqm1kmkb3o1b406ckrbmelmrj0@group.calendar.google.com", "m4h1inrcqd2ldmk35av1ook6mo@group.calendar.google.com", "d83j5lp28fit3jhlgkt38mcmqk@group.calendar.google.com", "j84ao3sffriard2mui8qqrdcb0@group.calendar.google.com", "3l59ro4kp0r0di2q4kj0to656o@group.calendar.google.com", "8j56d6hnp1ruk7k0kdh6nge3i4@group.calendar.google.com", "2eej6hfe5fddqvdessdgj2jah4@group.calendar.google.com", "f5992r4ilm5lto6po1qrcpmpss@group.calendar.google.com", "uevn0dacgivaqlitg7qm68qosg@group.calendar.google.com", "m0h39po16in29i6ecrigf7tca8@group.calendar.google.com", "1199qga1mgsgv7ij0g0o5933a0@group.calendar.google.com", "6u0fvrubd37toi5eit5uk9kj50@group.calendar.google.com", "3vam7c89mo91c40oc4kmka2608@group.calendar.google.com", "695734c5cfoo8g1f5sgmdgck18@group.calendar.google.com", "mbe2tro1edr6ts53funfc6q4ac@group.calendar.google.com", "c7eg8boe3o1a82er9mdj2fgnhc@group.calendar.google.com"];
+    var NorthEast = ["ueo9qj0iq4gvknns2f0b3l8hd0@group.calendar.google.com", "6m1lepgkj92ce74hs3tj3ugl6s@group.calendar.google.com", "i4p8gt5rjmaua1tf9b24c0aepk@group.calendar.google.com", "dpm6bb28ruf1gdfu32ismjhsqg@group.calendar.google.com", "f3lhtvql4li6nogbdkvccfmfek@group.calendar.google.com", "qfe5am5i4j7vve836g75mc92c8@group.calendar.google.com", "fcjj97vduev1u3n81jalvmkf9s@group.calendar.google.com", "h3f2i8susip7h1o9bn43qo3gb4@group.calendar.google.com", "i73rk3afnitf4fajkht9etdr0c@group.calendar.google.com", "ou5101io3rsl57sa3qbfn59jh0@group.calendar.google.com", "lscu6v5oqb4vbrboqlv55jd580@group.calendar.google.com", "r49qppjsqi3ac8a1ou02h1lfa4@group.calendar.google.com", "poac2t0cp2063ppfsor0n7icqg@group.calendar.google.com", "rqa88216b845o3a9db4c7iru0g@group.calendar.google.com", "jua7hsbcem7n03lkcj5i3cdtj8@group.calendar.google.com", "t1vuibcjek3ti0l6fvdi0hkrpg@group.calendar.google.com", "h3nnpurp5hd955r1m3vhm95rag@group.calendar.google.com"];
+    var Central = ["8ovi2gtrub1pbsobm6etuad1bg@group.calendar.google.com", "qn87il1e5jhprofqduqs97u9ck@group.calendar.google.com", "bf056kmshei1b04f8bocddj0tk@group.calendar.google.com", "jnja09en0764btbs5gv99ojlb4@group.calendar.google.com", "gcg06bd6qmvo30ej5fdt9cfr3c@group.calendar.google.com", "nt2u8fom12ikkjs57cp998m06s@group.calendar.google.com", "0dg8ejfo19tld5jf12uosdbseo@group.calendar.google.com", "gdk5ftpn46b4si1q988a52ck30@group.calendar.google.com", "vgb4kpg3anf2icumbsf6kuhfts@group.calendar.google.com", "qbk0asavj3qb241ecc1om7cars@group.calendar.google.com", "moevlooav0kh11q4ms86c3sfsc@group.calendar.google.com", "heskv060q5ccehc4eep66nr0ss@group.calendar.google.com", "bsn3jd0dplnlh596hb0qmkbaoo@group.calendar.google.com", "sidktejel2ungs17vl8b8tmhms@group.calendar.google.com"];
+    var SouthCentral = ["pnpt28d0reb48fuqqgn4j7om1o@group.calendar.google.com", "6563uo0mvbcsf6qd8la0cn9bmo@group.calendar.google.com", "1cvhumlrg4r5prsui365ck9s0c@group.calendar.google.com", "rmdvae1igqq5cg82cdqqb4f72s@group.calendar.google.com", "ktpac5ga5dcu9hdob1e59qu6n8@group.calendar.google.com", "in7u0r14uufbdguuchelu8ku3c@group.calendar.google.com", "jn5e522qdd36to95urol82ap6k@group.calendar.google.com", "ab61r1dshros8k1s4cmp79kdso@group.calendar.google.com", "o3d5bbsrd974t2rtkjmuhqj4dc@group.calendar.google.com", "n8u96k6bnna59mhbv1809m8g2c@group.calendar.google.com", "c4d00ci11hdvks18dgl3sl9v7o@group.calendar.google.com", "42tlb2fgrh10j67nju0ccc1svc@group.calendar.google.com", "lic0nn6389kpuvlbbtb5u57im8@group.calendar.google.com", "brsv74004lkcgp70p4lcqvptt8@group.calendar.google.com", "kueo8m8b93tmcdjfl8v3vl02m0@group.calendar.google.com"];
+    var South = ["h4rtb1lo6lo28indih7aq7d3bg@group.calendar.google.com", "aqu11b9gjenrhbva48763ntgjo@group.calendar.google.com", "te925bcm6ebaeloe3nrmg4brcs@group.calendar.google.com", "esmaaibp6pjkium2r1013mm2p8@group.calendar.google.com", "lk31f8gmfi84qifgad30vsn3c8@group.calendar.google.com", "t5utm3in7n3kdd8l94k4lb75ag@group.calendar.google.com", "7dokvdhab1jl24jkf4ecdbditg@group.calendar.google.com", "rugkukarb6ecrfl8mnvcgmgu94@group.calendar.google.com", "7qvl3mqukhot53vush4nucb71c@group.calendar.google.com", "6ngfnq0bmq86i55t3ufp9fjkv0@group.calendar.google.com", "s66kfs21t659b4vo6q6h290jkk@group.calendar.google.com", "a9oa48jjk8c413ike3tdqr02ag@group.calendar.google.com", "ma2lr7al4ton7527tt3ai6agto@group.calendar.google.com", "kueo8m8b93tmcdjfl8v3vl02m0@group.calendar.google.com", "dqudc8du96lt2j7eoh92vs0qto@group.calendar.google.com", "r10rh2tns9ape4ilvddk92v9rc@group.calendar.google.com"];
+    document.getElementById("returnLink").style.visibility = 'visible';
+    switch (document.getElementById('cid').value) {
+        case "Northwest":
+            calGroupArray    = NorthWest;
+            break;
+        case "Northeast":
+            calGroupArray    = NorthEast;
+            break;
+        case "Central":
+            calGroupArray    = Central;
+            break;
+        case "South Central":
+            calGroupArray    = SouthCentral;
+            break;
+        case "South":
+            calGroupArray    = South;
+            break;
+        default:
+            calGroupArray    = [document.getElementById('cid').value];
+            break;
+    }
+/* 12242015-Yiqi-Gao Begin*/
+/*use a function for the exact format desired...*/
+function ISODateString(d){
+ function pad(n){return n<10 ? '0'+n : n}
+ return d.getUTCFullYear()+'-'
+      + pad(d.getUTCMonth()+1)+'-'
+      + pad(d.getUTCDate())+'T'
+      + pad(d.getUTCHours())+':'
+      + pad(d.getUTCMinutes())+':'
+      + pad(d.getUTCSeconds())+'Z'}
+
+var d = new Date(); //alert(ISODateString(d));
+  
+  	switch (document.getElementById('datefilter').value) {
+        case "Future Events Only":
+            query    = "&timeMin=" + ISODateString(d);
+            break;
+        case "Future &amp; Past Events":
+            query    = "";
+            break;
+        case "Past Events Only":
+            query    = "&timeMax=" + ISODateString(d);
+            break;
+        default:
+            query    = "";
+            break;
+    }
+    document.getElementById("google-calendar").innerHTML = "";
+    var x;
+    for(x in calGroupArray){
+        calGroup = calGroupArray[x];
+        var calendarUrl = "https://www.googleapis.com/calendar/v3/calendars/" + calGroup + "/events?key=KKKKKKKKKKKKKKEEEEEEEEEEEEEEEEYYYYYYYYYYYYY&singleEvents=true&orderBy=startTime" + query + "&q=" + document.getElementById('keyword').value + "&callback=?";
+        $(document).ready(function(){
+    	    buildCalendar(calendarUrl);
+        });
+    }
+        return false; // prevent further bubbling of event
+}
+
+
+function buildCalendar(url){
+    var calContent  = "";
+    var months      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    $.getJSON(url, function (data){
+        var entries = data.items;//feed.entry;
+if(entries == "" && document.getElementById("google-calendar").innerHTML == "")
+    $("<div>No Results</div>").appendTo("#google-calendar");
+if(entries != "" && document.getElementById("google-calendar").innerHTML == "<div>No Results</div>")
+    document.getElementById("google-calendar").innerHTML = "";
+        $.each(entries, function(i, loc){
+            var title       = loc.summary;//title.$t;            
+            var description = "";
+            if(loc.description){
+            	description = loc.description;//content.$t;
+              	//description = description.split(" ").slice(0, 20).toString().replace(/,/g, " ") + "...";
+          	}
+			if(loc.start.date)
+				var date = loc.start.date;//content.$t;
+			else
+				var date = loc.start.dateTime;
+				
+			date = date.substring(0, 10);			
+			date = months[date.substring(5,7) - 1] + " " + date.substring(8,10) + ", " + date.substring(0,4);
+            var link        = loc.htmlLink;
+          if(document.getElementById('datefilter').value =="Future Events Only")
+            calContent += "<div class='feedsb'><h4><strong><a href='" + link + "' target='_blank'>" + date + "</a></h4><h5>" + title + "</strong></h5><p style='color:#333'>" + description + "<br /><br /> </p></div>" ;
+          else
+          	calContent = "<div class='feedsb'><h4><strong><a href='" + link + "' target='_blank'>" + date + "</a></h4><h5>" + title + "</strong></h5><p style='color:#333'>" + description + "<br /><br /> </p></div>" + calContent;//<hr style='border-top: 1px dotted #a7a9ac;'>
+        })
+        $(calContent).appendTo("#google-calendar");
+    })
+};
+
+</script>
+  
+  <t4 type="content" name="Main Page Body After Calendar" output="normal" modifiers="medialibrary, nav_sections"  />
+  	<p class="last-modified">Last Modified:&nbsp;<i><t4 type="meta" meta="last_modified" /></i></p>
+  </div>
+    
+    <!--End Left Column-->
